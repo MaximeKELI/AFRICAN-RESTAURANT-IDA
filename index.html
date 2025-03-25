@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap cdn -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ounje Cafe</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudfare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css}"/>
+
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script th:src="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.js}"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Navigation and header page -->
+    <header id="home">
+      <div class="container">
+        <div class="hamburger-menu">
+          <i class="fas fa-bars toggle "></i>
+          <i class="fas fa-times toggle "></i>
+        </div>
+        <nav class="d-flex align-items-center justify-content-center justify-content-lg-between">
+          <a class="navbar-brand" href="index.html">
+            <img class="img-fluid" src="img/logo.png" />
+          </a>
+          <ul class="nav-list text-center p-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item d-none d-lg-block ">  <!--d-none d-lg-block(This only shows on >lg pixel sizes)-->
+              <div class="dropdown ">
+                <a class="dropdown-toggle nav-link"  href="#food-tray" type="button" data-toggle="dropdown">
+                  Food Tray
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu " id="tray-content">
+                  <table class="table u-full-width" id="table">
+                    <thead>
+                      <tr>
+                        <th>Image</th>
+                        <th >Name</th>
+                        <th >Price</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>  
+                  </table>
+                  <a href="#" id="clear-tray" class="btn  ">Clear Tray</a>  
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#chefs">Our Chefs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="hero-text text-white w-100 px-2 px-sm-0" ">
+          <h1 class="display-4">Welcome to Oúnjẹ</h1>
+          <p class="lead mb-4" >
+            Bringing the african food experience to your doorstep!
+          </p>
+          <a class="btn px-5 mr-1" href="#book-table">Book a Table</a>
+          <a class="btn px-5 ml-1" href="#menu">Order Food</a>
+        </div>
+      </div>
+    </header>
+    <!-- About company -->
+    <main>
+      <section class="about" id="about">
+        <div class="container">
+          <div class="row align-items-lg-center">
+            <div class="col-12 col-md-6 text-center text-md-left" data-aos="fade-right">
+              <div class="section-heading mb-3">
+                <h4>Discover</h4>
+                <h1 class="display-4">Our Story</h1>
+              </div>
+              <p>
+                Ounje Cafe was founded by Edidiong when he started his Masters at Yale. It
+                started in his little kitchen at the hostels in a bid to have some familarity
+                after travelling across the world for Education. In the two states surrounding him, 
+                There were no other african restaurant and he saw an oppurtuninity to impact the lives of
+                peopelle who were looking some kind of familarity.
+              </p>
+              <a class="btn mt-4 mb-5 mb-md-0" href="#">Find out More</a>
+            </div>
+            <div class="col-12 col-md-6" data-aos="fade-left">
+              <img class="img-fluid" src="img/about.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+       <!-- Open hours -->
+      <section class="menu" id='menu'>
+        <div class="container">
+          <div class="row text-center text-white">
+            <div class="col-12 col-md-4 mb-4 mb-md-0" data-aos="fade-up">
+              <div class="cafe-info">
+                <i class="far fa-clock mb-3"></i>
+                <h1 class="mb-4" >Hours of operation</h1>
+                <p>Mon to Fri: 8am to 6pm</p>
+                <p>Sat to Sun: 8am to 1pm<p> 
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 mb-md-0" data-aos="fade-down">
+              <div class="cafe-info">
+                <i class="fas fa-map-marker mb-3"></i>
+                <h1 class="mb-4" >Our location</h1>
+                <address>
+                  No 6B methodist street <br>
+                  Opebi, Ikeja, Nigeria
+                </address>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 mb-md-0" data-aos="fade-left">
+              <div class="cafe-info">
+                <i class=" fas fa-mobile-alt mb-3 "></i>
+                <h1 class="mb-4" >Get in touch</h1>
+                <p>Phone #: (+41)78348743</p>
+                <p>Email: contact@ounje.com</p> 
+              </div>
+            </div>
+          </div>
+          <hr class="mt-5">
+        </div>
+
+        <!-- Menu -->
+        <div class="container-fluid p-0" id= "menu-list">
+          <div class="section-heading my-5 text-center">
+            <h4 class="text-white">Our Tasty Food</h4>
+            <h1 class="display-4 text-white">The Menu</h1>
+          </div>
+          <!-- Row 1 -->    
+          <div class="row no-gutters" >
+            <!-- column set 1 -->
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-1 order-xl-1 image" >
+              <img class="img-fluid" src="img/menu-item-1.png ">
+            </div>
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-2 order-xl-2 point-left">
+              <div class="menu-item-desc">
+                <h6>$15</h6>
+                <h1>Jollof Rice</h1>
+                <p>Jollof rice is Nigeria's number one meal. It's versality allows for it to be eaten anytime.
+                  Ounje serves it with either Fried fish or roasted Chicken.
+                </p>
+                <a id="buy-button" href="#" class="btn mt-3 d-lg-none ">Buy</a>
+                <a id="add-to-tray" href="#" class="btn mt-3 d-none d-lg-block add-to-tray" data-id="1">Add to Tray</a>
+                <button type="button" class="btn btn-primary mt-3 d-none d-xl-block" data-toggle="modal" data-target="#modal-1">
+                  Learn More
+                </button>
+                
+                <!-- Modal-1 -->
+                <div class="modal fade" id="modal-1" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered" id="modal-dialog-1" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" >Jollof Rice</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                          Jollof rice is Nigeria's number one meal. It's versality allows for it to be eaten anytime.
+                          Ounje serves it with either Fried fish or roasted Chicken.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+            <!-- column set 2 -->
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-4 order-xl-3 image">
+              <img class="img-fluid" src="img/menu-item-2.png">
+            </div>
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-3 order-xl-4 point-left">
+              <div class="menu-item-desc">
+                <h6>$25</h6>
+                <h1>Egusi Soup</h1>
+                <p>Egusi soup whch originates from eastern Nigeria is prepared by boiling melon
+                  in palm oil till it begin to make soft balls. It is eaten with goat meat and boiled
+                  fish.
+                </p>
+                <a id="buy-button" href="#" class="btn mt-3 d-lg-none">Buy</a>
+                <a id="add-to-tray" href="#" class="btn mt-3 d-none d-lg-block add-to-tray" data-id="2">Add to Tray</a>
+                <button type="button" class="btn btn-primary mt-3 d-none d-xl-block" data-toggle="modal" data-target="#modal-2">
+                  Learn More
+                </button>
+                
+                <!-- Modal-2 -->
+                <div class="modal fade" id="modal-2" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered" id="modal-dialog-2" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" >Egusi Soup</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Egusi soup whch originates from eastern Nigeria is prepared by boiling melon
+                        in palm oil till it begin to make soft balls. It is eaten with goat meat and boiled
+                        fish.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- column set 3 -->
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-5 order-xl-5 image">
+              <img class="img-fluid" src="img/menu-item-3.png">
+            </div>
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-6 order-xl-6 point-left">
+              <div class="menu-item-desc">
+                <h6>$18</h6>
+                <h1>White Rice and Chicken Stew</h1>
+                <p>White and Stew is a staple food in Nigeria as it is one of the easier foods
+                  to prepare. The chicken stew is made from fresh and pasty tomatoes fried with
+                  vegetable oil.  
+                </p>
+                <a id="buy-button" href="#" class="btn mt-3 d-lg-none">Buy</a>
+                <a id="add-to-tray" href="#" type="button" class="btn mt-3 d-none d-lg-block add-to-tray " data-id="3">Add to Tray</a>
+                <button type="button" class="btn btn-primary mt-3 d-none d-xl-block" data-toggle="modal" data-target="#modal-3">
+                  Learn More
+                </button>
+                
+                <!-- Modal-3 -->
+                <div class="modal fade" id="modal-3" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered" id="modal-dialog-3" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" >White Rice and Chicken Stew</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        White and Stew is a staple food in Nigeria as it is one of the easier foods
+                        to prepare. The chicken stew is made from fresh and pasty tomatoes fried with
+                        vegetable oil.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->    
+          <div class="row no-gutters">
+            <!-- column set 4 -->
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-2 order-xl-2 image">
+              <img class="img-fluid" src="img/menu-item-4.png">
+            </div>
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-1 order-xl-1 point-right">
+              <div class="menu-item-desc">
+                <h6>$10</h6>
+                <h1>Afang Soup</h1>
+                <p>Afang soup is made from waterleaf and pumpkin leaves cooked with fish and meat.
+                  It is very popular in southern and eastern Nigeria.   
+                </p>
+                <a id="buy-button" href="#" class="btn mt-3 d-lg-none">Buy</a>
+                <a id="add-to-tray" href="#" class="btn mt-3 d-none d-lg-block add-to-tray" data-id="4">Add to Tray</a>
+                <button type="button" class="btn btn-primary mt-3 d-none d-xl-block" data-toggle="modal" data-target="#modal-4">
+                  Learn More
+                </button>
+                
+                <!-- Modal-4 -->
+                <div class="modal fade" id="modal-4" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered" id="modal-dialog-4" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" >Afang Soup</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Afang soup is made from waterleaf and pumpkin leaves cooked with fish and meat.
+                        It is very popular in southern and eastern Nigeria.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- column set 5 -->
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-3 order-xl-4 image">
+              <img class="img-fluid" src="img/menu-item-5.png">
+            </div>
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-5 order-xl-3 point-right">
+              <div class="menu-item-desc">
+                <h6>$10</h6>
+                <h1>Moi-Moi</h1>
+                <p>Moi-Moi is a food made from grinded beans which can also be 
+                  eaten as a snack  anytime.
+                </p>
+                <a id="buy-button" href="#" class="btn mt-3 d-lg-none">Buy</a>
+                <a id="add-to-tray" href="#" class="btn mt-3 d-none d-lg-block add-to-tray" data-id="5">Add to Tray</a>
+                <button type="button" class="btn btn-primary mt-3 d-none d-xl-block" data-toggle="modal" data-target="#modal-5">
+                  Learn More
+                </button>
+                
+                <!-- Modal-5 -->
+                <div class="modal fade" id="modal-5" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered" id="modal-dialog-5" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" >Moi-Moi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Moi-Moi is a food made from grinded beans which can also be 
+                        eaten as a snack  anytime.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- column set 6 -->
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-6 order-xl-6 image">
+              <img class="img-fluid" src="img/menu-item-6.png">
+            </div>
+            <div class="col-12 col-sm-6 col-xl-2 order-sm-5 order-xl-5 point-right">
+              <div class="menu-item-desc">
+                <h6>$10</h6>
+                <h1>Efo Riro</h1>
+                <p>Efo Riro is a staple soup in western Nigeria rich in supplus Vegetable which 
+                  feed the body in minerals and sufficient vitamins.</p>
+                <a id="buy-button" href="#" class="btn mt-3 d-lg-none">Buy</a>
+                <a id="add-to-tray" href="#" class="btn mt-3 d-none d-lg-block add-to-tray" data-id="6">Add to Tray</a>
+                <button type="button" class="btn btn-primary mt-3 d-none d-xl-block" data-toggle="modal" data-target="#modal-6">
+                  Learn More
+                </button>
+                
+                <!-- Modal-6 -->
+                <div class="modal fade" id="modal-6" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered" id="modal-dialog-6" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" >Efo Riro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Efo Riro is a staple soup in western Nigeria rich in supplus Vegetable which 
+                        feed the body in minerals and sufficient vitamins.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </section>
+      
+      <!-- chefs -->
+      <section class="chef" id="chefs">
+        <div class="container">
+          <div class="section-heading my-5 text-center">
+            <h4>Meet</h4>
+            <h1 class="display-4 ">Our Chefs</h1>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12 col-md-4" data-aos="fade-right">
+            <img class="img-fluid" src="img/chef-1.png">
+            <div class="chef-body">
+              <h1>Sam Cook</h1>
+              <h6>Chef</h6>
+              <p>Sam is a Nigerian whose passion for cooking meals makes her attention to detail
+                to be off te charts. She has led her own restaurant to 4 starts.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4" data-aos="fade-up">
+            <img class="img-fluid" src="img/chef-2.png">
+            <div class="chef-body">
+              <h1>Edidiong Akpan</h1>
+              <h6> Master Chef</h6>
+              <p>Edidiong is the Master Chef of Ounje. He has a reputation of ensuring top-notch 
+                meals and leaves them satisfied while being hungry for more!
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4" data-aos="fade-left">
+            <img class="img-fluid" src="img/chef-3.png">
+            <div class="chef-body">
+              <h1>Jessica Adae</h1>
+              <h6>Chef</h6>
+              <p>Jessica grew up in an african household and loved the food growing up.
+                She is a very ood cook!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Book a table-->
+      <section class="book-table" id="book-table">
+        <div class="container-fluid p-0">
+          <form class="text-center border border-light p-5" action="#!">
+            <h1 class="display-4 text-white ">Book a Table</h1>
+            <div class="form-row mb-4">
+              <div class="col">
+                  <!-- First name -->
+                  <input type="text" id="defaultRegisterFormFirstName" 
+                    class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                  <!-- Last name -->
+                  <input type="text" id="defaultRegisterFormLastName" 
+                    class="form-control" placeholder="Last name">
+              </div>
+            </div>
+
+            <!-- E-mail -->
+            <div>
+              <input type="email" id="defaultRegisterFormEmail" 
+                class="form-control mb-3 mt-2" placeholder="E-mail: example@address.com">
+            </div>
+
+            <!-- Phone number -->
+            <input type="text" id="defaultRegisterPhonePassword" class="form-control mb-3" 
+              placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock"/>
+              
+              
+            <!-- People expected -->
+            <div class="form-group">
+              <select class="form-control" placeholder="Number of people expected" id="people-expected">
+                <option>Number of people expected</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+        
+            <!--Date and time -->
+            <div class="form-group">
+              <div class="input-group mb-3" >
+                <input type="text" class="form-control"  id="datetimepicker" 
+                  placeholder="Booking Date" name="datetimepicker">
+                  <span class="input-group-addon" 
+                      style="cursor: pointer;" onclick="$('#datetimepicker').focus();" >
+                    <i class="fa fa-calendar input-icon"  ></i>
+                  </span>
+              </div>
+            </div>  
+
+            <!--Optional/Additional request:-->
+            <div class="form-group">
+              <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" 
+                rows="3" placeholder="Please input any additional request."></textarea>
+              <small class="form-text text-muted mb-4">
+                  This is optional.
+              </small>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+              <label class="custom-control-label" for="defaultRegisterFormNewsletter">
+                Subscribe to our newsletter</label>
+            </div>
+
+            <!-- Sign up button -->
+            <button class="btn btn primary mt-3 d-block text-white" id="book-table-btn" type="submit">Book Table</button>
+          </form>
+        </div>
+      </section>
+      
+      <!--Footer-->
+      <footer class="text-center py-5" id="contact">
+        <div class="container-fluid padding">
+          <div class="row text-center padding">
+            <div class="col-12">
+              <h2>Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="https://twitter.com/ed_esu"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-google-plus-g"></i></a>
+              <a href="https://www.instagram.com/eddy_esu/"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <hr class="mt-2">
+          <h5>&copy; Ounje 2020</h5>
+        </div>
+      </footer>
+    </main>  
+     <!--Script must come last so that app.js can work properly-->
+    <script src="scripts.js" type="text/javascript"></script>
+
+  </body>
+</html>
