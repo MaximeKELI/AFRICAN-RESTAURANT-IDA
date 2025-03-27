@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ounje Cafe - {% block title %}{% endblock %}</title>
+    
+    <!-- Include all your CSS and JS files from the original HTML -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation and header (same as original) -->
+    <header id="home">
+        <!-- Your existing header content -->
+        <!-- Update the cart dropdown to use Django's static files -->
+        <div class="dropdown">
+            <a class="dropdown-toggle nav-link" href="#food-tray" type="button" data-toggle="dropdown">
+                Food Tray <span class="cart-count">0</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" id="tray-content">
+                <table class="table u-full-width" id="table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>  
+                </table>
+                <a href="#" id="clear-tray" class="btn">Clear Tray</a>
+                <a href="{% url 'checkout' %}" class="btn">Checkout</a>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Your existing footer content -->
+    </footer>
+
+    <!-- Include all your JS files from the original HTML -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <!-- Your custom JS -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    
+    {% block extra_js %}{% endblock %}
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000
+        });
+        
+        // CSRF setup for AJAX
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!(/^http:.*/.test(settings.url) || !(/^https:.*/.test(settings.url))) {
+                    xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                }
+            }
+        });
+    </script>
+</body>
+</html>
